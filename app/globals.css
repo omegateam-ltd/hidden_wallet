@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark indigo/blue background matching the image */
+    --background: 230 30% 8%;
+    --foreground: 210 40% 98%;
+    --card: 230 30% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 30% 10%;
+    --popover-foreground: 210 40% 98%;
+    /* Neon blue-green primary color */
+    --primary: 195 100% 50%;
+    --primary-foreground: 230 30% 8%;
+    --secondary: 230 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 30% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    /* Electric blue accent */
+    --accent: 195 100% 60%;
+    --accent-foreground: 230 30% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 30% 20%;
+    --input: 230 30% 20%;
+    --ring: 195 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Grid pattern background with dark blue tint */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(100, 150, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 150, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Animated gradient background - dark blue to darker blue */
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    rgba(30, 40, 80, 0.3) 0%, 
+    rgba(20, 30, 60, 0.2) 50%,
+    rgba(15, 25, 50, 0.3) 100%);
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 
+    0 0 10px rgba(100, 200, 255, 0.8),
+    0 0 20px rgba(100, 200, 255, 0.6),
+    0 0 30px rgba(100, 200, 255, 0.4),
+    0 0 40px rgba(100, 200, 255, 0.2);
+}
+
+.neon-glow-green {
+  text-shadow: 
+    0 0 10px rgba(100, 255, 200, 0.8),
+    0 0 20px rgba(100, 255, 200, 0.6),
+    0 0 30px rgba(100, 255, 200, 0.4);
+}
+
+/* Glass morphism effect with blue tint */
+.glass {
+  background: rgba(30, 50, 100, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 0 20px rgba(100, 200, 255, 0.1);
+}
+
+/* Electric blue glow border */
+.glow-border {
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  box-shadow: 
+    0 0 10px rgba(100, 200, 255, 0.3),
+    inset 0 0 10px rgba(100, 200, 255, 0.1);
+}
+
+/* Button styles matching the neon theme */
+.btn-primary {
+  @apply bg-[#64C8FF] text-[#0F1E32] border border-[#64C8FF] px-6 py-3 font-medium transition-all;
+  box-shadow: 
+    0 0 10px rgba(100, 200, 255, 0.5),
+    0 0 20px rgba(100, 200, 255, 0.3);
+}
+
+.btn-primary:hover {
+  @apply bg-[#4AB8FF] border-[#4AB8FF];
+  box-shadow: 
+    0 0 15px rgba(100, 200, 255, 0.7),
+    0 0 30px rgba(100, 200, 255, 0.5);
+}
+
+.btn-secondary {
+  @apply bg-transparent text-[#64C8FF] border border-[#64C8FF]/30 px-6 py-3 font-medium transition-all;
+  box-shadow: 0 0 10px rgba(100, 200, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  @apply border-[#64C8FF]/60 bg-[#64C8FF]/10;
+  box-shadow: 
+    0 0 15px rgba(100, 200, 255, 0.4),
+    0 0 25px rgba(100, 200, 255, 0.2);
+}
+
+/* Animated background gradient */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, 
+    rgba(20, 30, 60, 0.8),
+    rgba(30, 40, 80, 0.8),
+    rgba(20, 30, 60, 0.8),
+    rgba(15, 25, 50, 0.8));
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
